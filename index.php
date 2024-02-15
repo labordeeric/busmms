@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "Utilities/dbcontext.php";
+$imagePath = "dist/img/photo4.png";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +9,7 @@ include "Utilities/dbcontext.php";
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Garage Alpha | Log in</title>
+  <title>BMMS | Log in</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -18,15 +19,30 @@ include "Utilities/dbcontext.php";
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
+  <style>
+    /* Override existing CSS for body background */
+    body {
+      background-image: url('<?php echo $imagePath; ?>') !important;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+    }
+  </style>
+
 </head>
 
 <body class="hold-transition login-page">
+
   <div class="login-box">
     <div class="login-logo">
-      <a href="#"><b>Garage</b>Alpha</a>
+      <a href="#"><b></b></a>
+
+  
     </div>
     <!-- /.login-logo -->
-    <div class="card">
+    <div class="card shadow-lg">
+     <div class="card">
       <div class="card-body login-card-body">
 
         <?php
@@ -45,7 +61,9 @@ include "Utilities/dbcontext.php";
         }
         ?>
 
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg" style="font-size: 24px;">
+        <i class="fas fa-sign-in-alt"></i>    Sign in
+        </p>
 
         <form action="Utilities/login.php" method="post">
           <div class="input-group mb-3">
@@ -74,12 +92,15 @@ include "Utilities/dbcontext.php";
         </form>
 
         <p class="mb-1">
-          <a href="forgot-password.html">I forgot my password</a>
+          <a href="forgot-password.html">I forgot my password
+        <i class="fas fa-question-circle ml-1"></i>
+          </a>
         </p>
       </div>
       <!-- /.login-card-body -->
     </div>
   </div>
+      </div>
   <!-- /.login-box -->
 
   <!-- jQuery -->
